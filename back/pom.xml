@@ -24,7 +24,6 @@
                         </goals>
                     </execution>
                 </executions>
-
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -49,24 +48,26 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
-                <execution>
-                    <id>unpack-front</id>
-                    <phase>package</phase>
-                    <goals>
-                        <goal>unpack</goal>
-                    </goals>
-                    <configuration>
-                        <artifactItems>
-                            <artifactItem>
-                                <groupId>some</groupId>
-                                <artifactId>front</artifactId>
-                                <includes>static/index.html,static/index.js</includes>
-                                <outputDirectory>${project.build.directory}/classes</outputDirectory>
-                            </artifactItem>
-                        </artifactItems>
+                <executions>
+                    <execution>
+                        <id>unpack-front</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>unpack</goal>
+                        </goals>
+                        <configuration>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>some</groupId>
+                                    <artifactId>front</artifactId>
+                                    <includes>static/index.html,static/index.js</includes>
+                                    <outputDirectory>${project.build.directory}/classes</outputDirectory>
+                                </artifactItem>
+                            </artifactItems>
 
-                    </configuration>
-                </execution>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
             <plugin>
                 <artifactId>maven-war-plugin</artifactId>
