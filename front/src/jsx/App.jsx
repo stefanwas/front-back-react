@@ -10,12 +10,12 @@ export default class App extends React.Component {
         };
     }
 
-    rednder() {
+    render() {
         let x = 'Ala';
 
         return (
             <div>
-                <span>{{x}} i Ula</span>
+                <span>{x} i Ula</span>
             </div>
         );
     }
