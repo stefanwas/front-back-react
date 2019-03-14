@@ -17,7 +17,7 @@ module.exports = {
     module: {
         rules: [
             {
-                text: /(\.jsx|\.js)$/,
+                test: /(\.jsx|\.js)$/,
                 exclude: /node_modules/,
                 use: {
                     loader: "babel-loader"
@@ -29,12 +29,12 @@ module.exports = {
             }
         ]
     },
-    plugins: {
+    plugins: [
         new HtmlWebPackPlugin({
-            template: "./src/index.html", // where to look for html
-            filename: "index.html" // where to put index.html in dist directory
+            template: "./src/index.html",   // where to look for html
+            filename: "index.html"          // where to put index.html in dist directory
         })
-    },
+    ],
     devServer: {
         historyApiFallback: true,
         port: 4000,
